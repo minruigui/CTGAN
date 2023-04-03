@@ -28,7 +28,7 @@ setup_requires = [
 ]
 
 tests_require = [
-    'pytest>=3.4.2',
+    'pytest>=5.0',
     'pytest-rerunfailures>=9.1.1,<10',
     'pytest-cov>=2.6.0',
     'rundoc>=0.4.3,<0.5',
@@ -36,12 +36,11 @@ tests_require = [
 
 development_requires = [
     # general
-    'pip>=9.0.1',
     'bumpversion>=0.5.3,<0.6',
     'watchdog>=0.8.3,<0.11',
 
     # style check
-    'flake8>=3.7.7,<4',
+    'flake8>=3.7.9,<4',
     'isort>=4.3.4,<5',
     'dlint>=0.11.0,<0.12',  # code security addon for flake8
     'flake8-debugger>=4.0.0,<4.1',
@@ -74,8 +73,6 @@ development_requires = [
     # Advanced testing
     'coverage>=4.5.1,<6',
     'tox>=2.9.1,<4',
-
-    'invoke',
 ]
 
 setup(

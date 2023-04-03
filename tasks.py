@@ -69,6 +69,15 @@ def _validate_python_version(line):
 
 @task
 def install_minimum(c):
+    install_package(c, 'install_requires = [')
+    install_package(c, 'setup_requires = [')
+    install_package(c, 'tests_require = [')
+    install_package(c, 'development_requires = [')
+
+
+
+
+def install_package(c,prefix):
     with open('setup.py', 'r') as setup_py:
         lines = setup_py.read().splitlines()
 
@@ -80,7 +89,8 @@ def install_minimum(c):
                 break
 
             line = line.strip()
-            if _validate_python_version(line):
+            if _validate_python_version(line) and (line.startswith('\'' or line.startswith('\"'))):
+                print("----",line)
                 requirement = re.match(r'[^>]*', line).group(0)
                 requirement = re.sub(r"""['",]""", '', requirement)
                 version = re.search(r'>=?[^(,|#)]*', line).group(0)
@@ -91,7 +101,7 @@ def install_minimum(c):
 
                 versions.append(requirement)
 
-        elif line.startswith('install_requires = ['):
+        elif line.startswith(prefix):
             started = True
 
     c.run(f'python -m pip install {" ".join(versions)}')
