@@ -54,7 +54,7 @@ development_requires = [
     'wheel>=0.30.0',
 
     # Advanced testing
-    'coverage>=4.5.1,<6',
+    'coverage>=5.2.1,<6',
     'tox>=4',
 ]
 
