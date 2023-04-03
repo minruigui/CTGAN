@@ -12,6 +12,7 @@ with open('HISTORY.md', encoding='utf-8') as history_file:
     history = history_file.read()
 
 install_requires = [
+    'torch>=2.0.0'
     'packaging>=20,<22',
     "numpy>=1.20.0,<2;python_version<'3.10'",
     "numpy>=1.23.3,<2;python_version>='3.10'",
@@ -30,7 +31,7 @@ setup_requires = [
 tests_require = [
     'pytest>=7.0',
     'pytest-rerunfailures>=9.1.1,<10',
-    'pytest-cov>=2.6.0',
+    'pytest-cov>=4.0.0',
     'rundoc>=0.4.3,<0.5',
 ]
 
@@ -43,24 +44,6 @@ development_requires = [
     'flake8>=3.7.9,<4',
     'isort>=4.3.4,<5',
     'dlint>=0.11.0,<0.12',  # code security addon for flake8
-    'flake8-debugger>=4.0.0,<4.1',
-    'flake8-mock>=0.3,<0.4',
-    'flake8-mutable>=1.2.0,<1.3',
-    'flake8-absolute-import>=1.0,<2',
-    'flake8-multiline-containers>=0.0.18,<0.1',
-    'flake8-print>=4.0.0,<4.1',
-    'flake8-quotes>=3.3.0,<4',
-    'flake8-fixme>=1.1.1,<1.2',
-    'flake8-expression-complexity>=0.0.9,<0.1',
-    'flake8-eradicate>=1.1.0,<1.2',
-    'flake8-builtins>=1.5.3,<1.6',
-    'flake8-variables-names>=0.0.4,<0.1',
-    'pandas-vet>=0.2.2,<0.3',
-    'flake8-comprehensions>=3.6.1,<3.7',
-    'dlint>=0.11.0,<0.12',
-    'flake8-docstrings>=1.5.0,<2',
-    'flake8-sfs>=0.0.3,<0.1',
-    'flake8-pytest-style>=1.5.0,<2',
 
     # fix style issues
     'autoflake>=1.1,<2',
